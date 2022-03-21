@@ -1,0 +1,10 @@
+grid {
+    display: flex;
+}
+
+.case {
+    border: 2px black solid;
+    margin: 1px;
+    padding: 15px;
+    box-sizing: border-box;
+}
