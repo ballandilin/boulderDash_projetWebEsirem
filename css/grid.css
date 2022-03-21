@@ -1,5 +1,6 @@
 grid {
     display: flex;
+    background-image: url("../img/backGrid.png");
 }
 
 .case {
