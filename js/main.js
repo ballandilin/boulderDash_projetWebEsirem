@@ -28,7 +28,8 @@ window.onload = () => {
     
                     var c = document.createElement("div");
                     c.classList.add("case");
-                    c.innerHTML = _case;
+                    c.classList.add(_case);
+                    // c.innerHTML = _case;
                     div.appendChild(c);
     
                 } else {
