@@ -1,0 +1,62 @@
+@font-face {
+    font-family: "doom";
+    src: url("../font/amazdoom/AmazDooMLeft.ttf");
+}
+
+
+
+body {
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+    background-color: black;
+    background-image: url("../img/back.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.menu {
+    display: flex;
+
+    flex-direction: column;
+    justify-content:center;
+    padding: 2em;
+    background-color:rgb(255, 60, 0);
+    box-shadow: 10px 10px 10px 10px rgba(255, 60, 0, .7);;
+    text-align: center;
+}
+
+
+button {
+    margin-top: 5em;
+    border: none;
+    height: 30px;
+}
+
+h2 {
+    font-family: "doom";
+    font-size: 5em;
+}
+
+
+.diff {
+    font-size: 2em;
+    font-weight: bold;
+    margin: 0;
+    padding: .2em;
+    box-sizing: border-box;
+    font-family: Impact;
+    text-align: left;
+}
+
+

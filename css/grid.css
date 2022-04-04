@@ -1,7 +1,6 @@
 grid {
     display: flex;
     background-image: url("../img/backGrid.png");
-    /* opacity: 0.7; */
 }
 
 .case {
@@ -21,7 +20,7 @@ grid {
 
 
 .T {
-    background-image: url("../sprite/mur.png");
+    background-image: url("../sprite/terre.png");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -29,7 +28,22 @@ grid {
 
 
 .M {
-    background-image: url("../sprite/mur.png");
+    background-image: url("../sprite/mur.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+.D {
+    background-image: url("../sprite/diams.webp");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.R {
+    background-image: url("../sprite/cacodemon.gif");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;

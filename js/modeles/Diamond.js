@@ -1,8 +1,9 @@
-// make a class rock that extends class case, with a method to get the rock position and a method to apply gravity to the rock
-
+// make a class Diamond that extends class Case, with a method to get the diamond position
 import { Case } from "../modeles/Case.js";
 
-export class Rock extends Case {
+
+
+export class Diamond extends Case {
     constructor(x, y, type) {
         super(x, y, type);
     }
@@ -13,9 +14,4 @@ export class Rock extends Case {
             y: this.y
         };
     }
-
-    gravity() {
-        this.y++;
-    }
 }
-
