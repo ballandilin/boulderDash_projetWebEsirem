@@ -9,7 +9,4 @@ window.onload = () => {
     map.getMapFromFetch();
     console.log(map.getDiamonds());
 
-    // window.addEventListener("keydown", () => {map.display()});
-
-
 }
