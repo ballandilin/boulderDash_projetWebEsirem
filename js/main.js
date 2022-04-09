@@ -1,12 +1,27 @@
-import { Map } from "/js/Map.js";
-
+import {
+    Map
+} from "/js/Map.js";
+import {
+    MapGenerator
+} from "/js/mapGenerator.js";
 
 
 window.onload = () => {
 
-
+    window.localStorage.clear();
     let map = new Map();
-    map.getMapFromFetch();
     console.log(map.getDiamonds());
+    var audio = new Audio('../sound/d_e1m1.mp3');
+    audio.play();
 
+    // loop to run the game
+    let loop = setInterval(() => {
+        map.update();
+    }, 1000 / 10); // 10 fps
+
+
+    // on button press go back to menu  
+    document.getElementById("menu").addEventListener("click", () => {
+        window.location.href = "/html/index.html";
+    });
 }

@@ -3,6 +3,7 @@
 import { Case } from "../modeles/Case.js";
 
 export class Rock extends Case {
+    #falling = false;
     constructor(x, y, type) {
         super(x, y, type);
     }
@@ -14,8 +15,12 @@ export class Rock extends Case {
         };
     }
 
-    gravity() {
-        this.y++;
+    // set position method
+    setPosition(x, y) {
+        this.x = x;
+        this.y = y;
     }
+
+
 }
 

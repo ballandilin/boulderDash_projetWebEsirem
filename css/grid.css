@@ -1,11 +1,31 @@
+body {
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+    background-color: black;
+    background-image: url("../img/e1m1.gif");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
 grid {
     display: flex;
-    background-image: url("../img/backGrid.png");
+    /* background-image: url("../img/backGrid.png"); */
+    border: .5px black solid;
+
 }
 
 .case {
-    border: .5px black solid;
-    /* margin: .1em; */
     padding: 1em;
     box-sizing: border-box;
     color: white;
@@ -27,7 +47,7 @@ grid {
 }
 
 
-.M {
+.W {
     background-image: url("../sprite/mur.jpg");
     background-position: center;
     background-repeat: no-repeat;
@@ -48,3 +68,4 @@ grid {
     background-repeat: no-repeat;
     background-size: cover;
 }
+

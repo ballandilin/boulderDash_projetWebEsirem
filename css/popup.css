@@ -1,0 +1,81 @@
+@font-face {
+    font-family: "doom";
+    src: url("../font/amazdoom/AmazDooMLeft.ttf");
+}
+
+@font-face {
+    font-family: "doom2";
+    src: url("../font/doom/DooM.ttf");
+}
+
+
+.overlay {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.7);
+    transition: opacity 500ms;
+    visibility: hidden;
+    opacity: 0;
+}
+
+.overlay:target {
+    visibility: visible;
+    opacity: 1;
+}
+
+.popup {
+    margin: 5em auto;
+    /* padding: 5em; */
+    box-sizing: border-box;
+    border-radius: 5px;
+    width: 45em;
+    position: relative;
+    background: radial-gradient(circle, rgba(185, 4, 4, 0.7), rgba(0, 0, 0, 0.7));
+
+}
+
+.popup h2 {
+    margin-top: 0;
+    color: rgb(0, 0, 0);
+    font-family: "doom";
+    text-align: center;
+    font-size: 10rem;
+}
+
+.popup img {
+    width: auto;
+    height: 25em;
+    margin: 0 auto;
+    display: block;
+    background: transparent;
+}
+
+.popup .close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    transition: all 200ms;
+    font-size: 30px;
+    font-weight: bold;
+    text-decoration: none;
+    color: #333;
+}
+
+.popup .close:hover {
+    color: #c31a1a;
+}
+
+.popup .content {
+    max-height: 30%;
+    overflow: auto;
+}
+
+
+@media screen and (max-width: 700px){
+    .popup{
+      width: 70%;
+    }
+  }

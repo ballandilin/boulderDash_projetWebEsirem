@@ -14,4 +14,6 @@ export class Case {
             y: this.y
         };
     }
+
+
 }

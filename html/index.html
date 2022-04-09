@@ -10,10 +10,9 @@
 </head>
 
 <body>
-    <form class="menu" action="game.html">
 
-        <h2>Choose your diffulty : </h2>
-
+    <div class="menu">
+        <img src="../img/doom.png" alt="">
         <div class="diff" value="young">
             I'm too young to die
         </div>
@@ -29,8 +28,15 @@
         <div class="diff" value="nightmare">
             Nightmare!
         </div>
-        <button> PLAY !! </button>
-    </form>
+        <div id="backButton">
+            <button id="play"> PLAY !! </button>
+        </div>
+        <div id="backButton">
+            <button id="creator">Level creator</button>
+        </div>
+    </div>
+
+    <script type="module" src="../js/menu.js"></script>
 </body>
 
 </html>

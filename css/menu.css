@@ -3,6 +3,11 @@
     src: url("../font/amazdoom/AmazDooMLeft.ttf");
 }
 
+@font-face {
+    font-family: "doom2";
+    src: url("../font/doom/DooM.ttf");
+}
+
 
 
 body {
@@ -23,40 +28,80 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
 }
+
+
+.menu img{
+    width:15vw;
+    height:auto;
+    background-color: transparent;
+}
+
 
 .menu {
     display: flex;
-
     flex-direction: column;
     justify-content:center;
-    padding: 2em;
-    background-color:rgb(255, 60, 0);
-    box-shadow: 10px 10px 10px 10px rgba(255, 60, 0, .7);;
-    text-align: center;
+    /* align-items: center; */
+    padding: 2vw;
+    box-sizing: border-box;
+    background-color: rgba(0, 0, 0, 0.9);
+    align-items: center;
+    border-radius: 1%;
 }
 
+
+.menu button {
+    align-items: center;
+    justify-content: center;
+}
+
+/* skull selector for the menu, use the gif named selector.gif, the selector need to be placed next to text menu */
 
 button {
     margin-top: 5em;
     border: none;
-    height: 30px;
+    height: auto;
+    width: auto;
+    /* transform: translateX(50%); */
+    font-family: "doom";
+    font-size: 4vw;
+    color: transparent;
+    background: url("../img/font.jpg");
+    background-size: cover;
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    -moz-background-clip:text;
+    background-clip:text; 
+    padding:0;
+    margin:0;
+    box-sizing: border-box;
+    text-align:center;
+    -webkit-text-stroke: .5px #000000;
 }
 
-h2 {
-    font-family: "doom";
-    font-size: 5em;
-}
 
 
 .diff {
-    font-size: 2em;
-    font-weight: bold;
+    font-size: 3vw;
+    font-family: "doom2";
     margin: 0;
     padding: .2em;
     box-sizing: border-box;
-    font-family: Impact;
     text-align: left;
+    color: #fff;
+    /* transform: translateX(10%); */
+    background: url("../img/backGrid.png") no-repeat;
+    background-size: cover;
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    -moz-background-clip:text;
+    background-clip:text; 
+    padding:0;
+    margin:0;
+    text-align:center;
+    -webkit-text-stroke: .5px #ffaa00;
 }
 
 
