@@ -1,9 +1,9 @@
 import {
     Map
-} from "/js/Map.js";
+} from "./js/Map.js";
 import {
     MapGenerator
-} from "/js/mapGenerator.js";
+} from "./js/mapGenerator.js";
 
 
 window.onload = () => {
