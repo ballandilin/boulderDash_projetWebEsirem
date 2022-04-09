@@ -2,13 +2,13 @@ window.onload = () => {
 
     // on button press go to game page
     document.getElementById("play").addEventListener("click", () => {
-            window.location.href = "./html/game.html";
+            window.location.href = "./game.html";
         }
     );
 
     // on button press go to map creation page
     document.getElementById("creator").addEventListener("click", () => {
-            window.location.href = "./html/mapGen.html";
+            window.location.href = "./mapGen.html";
         }   
     );
 
