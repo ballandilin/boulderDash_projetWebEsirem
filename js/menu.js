@@ -11,7 +11,4 @@ window.onload = () => {
             window.location.href = "./mapGen.html";
         }   
     );
-
-
-
 }
