@@ -8,10 +8,9 @@ import {
 
 window.onload = () => {
 
-    window.localStorage.clear();
+    // window.localStorage.clear();
     let map = new Map();
-    console.log(map.getDiamonds());
-    var audio = new Audio('../sound/d_e1m1.mp3');
+    var audio = new Audio('../sound/e1m1.mp3');
     audio.play();
 
     // loop to run the game
@@ -23,5 +22,9 @@ window.onload = () => {
     // on button press go back to menu  
     document.getElementById("menu").addEventListener("click", () => {
         window.location.href = "./index.html";
+    });
+
+    document.getElementById("reset").addEventListener("click", () => {
+        map.reset();
     });
 }

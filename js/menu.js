@@ -1,14 +1,20 @@
+
+
 window.onload = () => {
+
 
     // on button press go to game page
     document.getElementById("play").addEventListener("click", () => {
-            window.location.href = "./game.html";
-        }
-    );
+        window.location.href = "./game.html";
+    });
+
+    // on button press go back to menu  
+    document.getElementById("continue").addEventListener("click", () => {
+        window.location.href = "./game.html";
+    });
 
     // on button press go to map creation page
     document.getElementById("creator").addEventListener("click", () => {
-            window.location.href = "./mapGen.html";
-        }   
-    );
+        window.location.href = "./mapGen.html";
+    });
 }

@@ -49,13 +49,16 @@ export class Map {
 
 
 
-    // method to pass to the next level
-    nextLevel() {
-        this.reset();
-        this.getMapFromFetch();
-        this.display();
+    // method to set the map
+    setMap(map) {
+        this.cases = this.jsonToCase(JSON.parse(window.localStorage.getItem(map)));
     }
 
+
+    // method to get current map
+    getCurrentMap() {
+        return this.currentMap;
+    }
 
 
 
@@ -64,13 +67,19 @@ export class Map {
             .then(response => response.json())
             .then(json => {
                 this.jsonMap = json;
+                console.log(new utils().getKeyList());
                 this.jsonMap["niveau"].forEach(mapp => {
                     for (const lvl in mapp) {
                         window.localStorage.setItem(lvl, JSON.stringify(this.jsonToCase(mapp[lvl])));
                     }
                 });
-                this.cases = this.jsonToCase(json["niveau"][0]["level1"]);
-                this.#currentMap = "level1";
+                if (window.localStorage.getItem("save") != null) {
+                    this.setMap("save");
+                    this.#currentMap = "save";
+                } else {
+                    this.cases = this.jsonToCase(json["niveau"][0]["level1"]);
+                    this.#currentMap = "level1";
+                }
                 this.display();
             });
         }
@@ -114,9 +123,6 @@ export class Map {
         });
         return casees;
     }
-
-
-
 
 
 
@@ -200,6 +206,7 @@ export class Map {
                     this.cases[y - 1][x].type = "P";
                     this.cases[y][x].type = "V";
                     this.player.setPosition(x, y - 1);
+                    this.countMovement();
                 }
                 break;
             case "d":
@@ -208,6 +215,7 @@ export class Map {
                     this.cases[y + 1][x].type = "P";
                     this.cases[y][x].type = "V";
                     this.player.setPosition(x, y + 1);
+                    this.countMovement();
                 }
                 break;
             case "z":
@@ -216,6 +224,7 @@ export class Map {
                     this.cases[y][x - 1].type = "P";
                     this.cases[y][x].type = "V";
                     this.player.setPosition(x - 1, y);
+                    this.countMovement();
                 }
                 break;
             case "s":
@@ -224,6 +233,7 @@ export class Map {
                     this.cases[y][x + 1].type = "P";
                     this.cases[y][x].type = "V";
                     this.player.setPosition(x + 1, y);
+                    this.countMovement();
                 }
                 break;
         }
@@ -264,7 +274,7 @@ export class Map {
 
     // methof to reset the map at the death of the player
     reset() {
-        this.jsonToCase(JSON.parse(window.localStorage.getItem("reset")));
+        this.cases = this.jsonToCase(JSON.parse(window.localStorage.getItem(this.#currentMap)));
     }
 
 
@@ -274,6 +284,7 @@ export class Map {
             this.death();
             this.applyGravity();
             this.win();
+            this.saveProgress();
         }
         this.display();
     }
@@ -295,6 +306,22 @@ export class Map {
     // methode so save the current progress of the player
     saveProgress() {
         window.localStorage.setItem("save", JSON.stringify(this.cases));
+    }
+
+
+    // method to let the player push the rock horizontally if there is nothing in the way
+    pushRock(x, y) {
+        if (this.cases[y][x - 1] !== undefined && this.cases[y][x - 1].type === "V") {
+            this.cases[y][x - 1].type = "R";
+            this.cases[y][x - 1].falling = true;
+            this.cases[y][x].type = "V";
+            this.player.setPosition(x - 1, y);
+        }
+    }
+
+    //method to get saved map
+    getSavedMap() {
+        return JSON.parse(window.localStorage.getItem("save"));
     }
 
 }

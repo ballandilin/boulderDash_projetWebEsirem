@@ -99,6 +99,10 @@ export class MapGenerator {
             }
             mapArray.push(line);
         }
+        // add player in pos 0, 0
+        let player = new Player(0, 0);
+        mapArray[0][0] = player;
+        
         return mapArray;
     }
 

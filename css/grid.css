@@ -22,6 +22,7 @@ grid {
     display: flex;
     /* background-image: url("../img/backGrid.png"); */
     border: .5px black solid;
+    background: radial-gradient(circle, rgba(185, 4, 4, 0.7), rgba(0, 0, 0, 0.7));
 
 }
 
@@ -69,3 +70,36 @@ grid {
     background-size: cover;
 }
 
+
+#containerBut {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 5px;
+    padding: 1em;
+    box-sizing: border-box;
+}
+
+button {
+    margin-top: 5em;
+    border: none;
+    height: auto;
+    width: auto;
+    /* transform: translateX(50%); */
+    font-family: "doom";
+    font-size: 4vw;
+    color: transparent;
+    background: url("../img/font.jpg");
+    background-size: cover;
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    -moz-background-clip:text;
+    background-clip:text; 
+    padding:0;
+    margin:0;
+    box-sizing: border-box;
+    text-align:center;
+    -webkit-text-stroke: .5px #000000;
+}

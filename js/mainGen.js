@@ -14,4 +14,9 @@ window.onload = () => {
         mGen.saveMap();
         mGen.displayCreatedMap();
     });
+
+    // on button press go back to menu  
+    document.getElementById("menu").addEventListener("click", () => {
+        window.location.href = "./index.html";
+    });
 }

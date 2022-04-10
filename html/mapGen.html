@@ -11,10 +11,10 @@
 </head>
 
 <body>
+    <grid></grid>
 
-    <main>
-        <grid></grid>
-        <!-- let the user create his own map -->
+
+    <div id="containerBut">
         <form>
             <input id="mapName" type="text" name="mapName" placeholder="Map Name">
         </form>
@@ -22,7 +22,8 @@
         <ul id="mapCreated"></ul>
 
         <button id="gen">create map</button>
-    </main>
+        <button id="menu" class="return">Menu</button>
+    </div>
 
     <script type="module" src="../js/mainGen.js"></script>
 
