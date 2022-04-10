@@ -15,8 +15,8 @@ export class Map {
     #player;
     #width = 16;
     #height = 32;
-    #deathSound = new Audio('../sound/sounds/dspldeth.wav');
-    #itemPickUpSound = new Audio("../sound/sounds/dsitemup.wav");
+    #deathSound = new Audio('./sound/sounds/dspldeth.wav');
+    #itemPickUpSound = new Audio("./sound/sounds/dsitemup.wav");
 
     constructor() {
         this.cases = [];
@@ -48,7 +48,7 @@ export class Map {
 
 
     getMapFromFetch() {
-        fetch("../map/map.json")
+        fetch("./map/map.json")
             .then(response => response.json())
             .then(json => {
                 this.jsonMap = json;

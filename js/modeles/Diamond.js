@@ -1,5 +1,5 @@
 // make a class Diamond that extends class Case, with a method to get the diamond position
-import { Case } from "../modeles/Case.js";
+import { Case } from "./modeles/Case.js";
 
 
 

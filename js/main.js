@@ -22,6 +22,6 @@ window.onload = () => {
 
     // on button press go back to menu  
     document.getElementById("menu").addEventListener("click", () => {
-        window.location.href = "/html/index.html";
+        window.location.href = "./index.html";
     });
 }
