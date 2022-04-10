@@ -1,28 +1,28 @@
 // make a class for the map generator that inerits from the map class and use the class cases to create the map
 import {
     Map
-} from "/js/Map.js";
+} from "./Map.js";
 import {
     Case
-} from "/js/modeles/Case.js";
+} from "./modeles/Case.js";
 import {
     Player
-} from "/js/modeles/Player.js";
+} from "./modeles/Player.js";
 import {
     Diamond
-} from "/js/modeles/Diamond.js";
+} from "./modeles/Diamond.js";
 import {
     Rock
-} from "/js/modeles/rocher.js";
+} from "./modeles/rocher.js";
 import {
     Dirt
-} from "/js/modeles/Dirt.js";
+} from "./modeles/Dirt.js";
 import {
     Wall
-} from "/js/modeles/wall.js";
+} from "./modeles/wall.js";
 import {
     utils
-} from "/js/utils.js";
+} from "./utils.js";
 
 
 export class MapGenerator {

@@ -1,12 +1,12 @@
 // make a class map that contain all the cases of the map with a method to get the case at a specific position
 // the class display the map from a json file, with a method to display the map in an element named grid
 // the cases of the map use the class case
-import { Case } from "/js/modeles/Case.js";
-import { Player } from"/js/modeles/Player.js";
-import { Diamond } from"/js/modeles/Diamond.js";
-import { Rock } from"/js/modeles/rocher.js";
-import { Dirt } from"/js/modeles/Dirt.js";
-import { Wall } from"/js/modeles/wall.js";
+import { Case } from "./modeles/Case.js";
+import { Player } from"./modeles/Player.js";
+import { Diamond } from"./modeles/Diamond.js";
+import { Rock } from"./modeles/rocher.js";
+import { Dirt } from"./modeles/Dirt.js";
+import { Wall } from"./modeles/wall.js";
 
 
 export class Map {
