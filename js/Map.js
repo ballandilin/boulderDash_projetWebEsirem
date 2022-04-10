@@ -4,7 +4,7 @@
 import { Case } from "./modeles/Case.js";
 import { Player } from"./modeles/player.js";
 import { Diamond } from"./modeles/Diamond.js";
-import { Rock } from"./modeles/rocher.js";
+import { Rock } from"./modeles/rock.js";
 import { Dirt } from"./modeles/Dirt.js";
 import { Wall } from"./modeles/wall.js";
 
@@ -48,7 +48,7 @@ export class Map {
 
 
     getMapFromFetch() {
-        fetch("./map/map.json")
+        fetch("../map/map.json")
             .then(response => response.json())
             .then(json => {
                 this.jsonMap = json;

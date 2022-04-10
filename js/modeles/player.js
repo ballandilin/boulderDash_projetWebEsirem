@@ -10,9 +10,6 @@ export class Player extends Case {
 
 
 
-
-
-
     // method to set player position
     setPosition(x, y) {
         this.x = x;

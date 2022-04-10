@@ -10,7 +10,7 @@ import {
 } from "./modeles/Diamond.js";
 import {
     Rock
-} from "./modeles/rocher.js";
+} from "./modeles/rock.js";
 import {
     Dirt
 } from "./modeles/Dirt.js";
