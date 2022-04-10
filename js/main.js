@@ -1,9 +1,9 @@
 import {
     Map
-} from "./js/Map.js";
+} from "/js/Map.js";
 import {
     MapGenerator
-} from "./js/mapGenerator.js";
+} from "/js/mapGenerator.js";
 
 
 window.onload = () => {
@@ -22,6 +22,6 @@ window.onload = () => {
 
     // on button press go back to menu  
     document.getElementById("menu").addEventListener("click", () => {
-        window.location.href = "./html/index.html";
+        window.location.href = "/html/index.html";
     });
 }
