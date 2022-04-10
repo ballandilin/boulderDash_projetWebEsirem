@@ -1,13 +1,10 @@
 // make a class for the map generator that inerits from the map class and use the class cases to create the map
 import {
-    Map
-} from "./Map.js";
-import {
     Case
 } from "./modeles/Case.js";
 import {
     Player
-} from "./modeles/Player.js";
+} from "./modeles/player.js";
 import {
     Diamond
 } from "./modeles/Diamond.js";
