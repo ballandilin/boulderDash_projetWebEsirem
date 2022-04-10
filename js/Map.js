@@ -7,6 +7,7 @@ import { Diamond } from"./modeles/Diamond.js";
 import { Rock } from"./modeles/rock.js";
 import { Dirt } from"./modeles/Dirt.js";
 import { Wall } from"./modeles/wall.js";
+import { utils } from"./utils.js";
 
 
 export class Map {
@@ -15,8 +16,9 @@ export class Map {
     #player;
     #width = 16;
     #height = 32;
-    #deathSound = new Audio('./sound/sounds/dspldeth.wav');
-    #itemPickUpSound = new Audio("./sound/sounds/dsitemup.wav");
+    #deathSound = new Audio('../sound/sounds/dspldeth.wav');
+    #itemPickUpSound = new Audio("../sound/sounds/dsitemup.wav");
+    #currentMap = "";
 
     constructor() {
         this.cases = [];
@@ -47,14 +49,28 @@ export class Map {
 
 
 
+    // method to pass to the next level
+    nextLevel() {
+        this.reset();
+        this.getMapFromFetch();
+        this.display();
+    }
+
+
+
+
     getMapFromFetch() {
         fetch("../map/map.json")
             .then(response => response.json())
             .then(json => {
                 this.jsonMap = json;
-                this.jsonToCase(json["niveau"][0]);
-                window.localStorage.setItem("map", JSON.stringify(this.cases));
-                window.localStorage.setItem("reset", JSON.stringify(this.cases));
+                this.jsonMap["niveau"].forEach(mapp => {
+                    for (const lvl in mapp) {
+                        window.localStorage.setItem(lvl, JSON.stringify(this.jsonToCase(mapp[lvl])));
+                    }
+                });
+                this.cases = this.jsonToCase(json["niveau"][0]["level1"]);
+                this.#currentMap = "level1";
                 this.display();
             });
         }
@@ -65,7 +81,8 @@ export class Map {
      * @param {*} jsonMap 
      */
     jsonToCase(jsonMap) {
-        this.cases = jsonMap.map((line, y) => {
+        let casees = [];
+        casees = jsonMap.map((line, y) => {
             return Object.values(line).map((type, x) => {
                 if (typeof type === "object") {
                     type = type.type;
@@ -95,6 +112,7 @@ export class Map {
                 }
             });
         });
+        return casees;
     }
 
 
@@ -114,6 +132,8 @@ export class Map {
                         this.cases[y][x].type = "V";
                         this.cases[y][x + 1].type = "R";
                         this.cases[y][x + 1].falling = true;
+                    } else if (caseBelow != undefined && caseBelow.type == "T") {
+                        this.cases[y][x].falling = false;
                     }
                 }
             }
@@ -222,7 +242,8 @@ export class Map {
             this.player.setPosition(x, y);
             this.player.updateLife();
             this.#deathSound.play();
-            window.location = "#popup1";
+            window.location = "#popupDeath";
+            this.reset()
         }
     }
 
@@ -231,7 +252,8 @@ export class Map {
     win() {
         let diamonds = this.getDiamonds();
         if (diamonds === 0) {
-            this.reset();
+            // window.location = "#popupWin";
+            this.nextLevel();
             this.display();
         }
     }
@@ -256,5 +278,23 @@ export class Map {
         this.display();
     }
 
+
+   countMovement() {
+        this.player.movement++;
+    }
+
+
+    // method to pass to the next level in the local storage
+    nextLevel() {
+        let mapNames = new utils().getKeyList();
+        let index = mapNames.indexOf(this.#currentMap);
+        this.#currentMap = mapNames[index + 1];
+        this.cases = this.jsonToCase(JSON.parse(window.localStorage.getItem(this.#currentMap)));
+    }
+
+    // methode so save the current progress of the player
+    saveProgress() {
+        window.localStorage.setItem("save", JSON.stringify(this.cases));
+    }
 
 }

@@ -183,20 +183,4 @@ export class MapGenerator {
     }
 
 
-
-    //     for (let y = 0; y < this.height - 1; y++) {
-    //         let line = document.createElement("div");
-    //         for (let x = 0; x < this.width - 1; x++) {
-    //             let tile = document.createElement("div");
-    //             tile.className = map[x][y].type;
-    //             tile.classList.add("case");
-    //             tile.addEventListener("click", (e) => {
-    //                 this.changeType(e.target);
-    //             });
-    //             line.appendChild(tile);
-    //         }
-    //         grid.appendChild(line);
-    //     }
-    // }
-
 }
