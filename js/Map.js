@@ -2,7 +2,7 @@
 // the class display the map from a json file, with a method to display the map in an element named grid
 // the cases of the map use the class case
 import { Case } from "./modeles/Case.js";
-import { Player } from"./modeles/Player.js";
+import { Player } from"./modeles/player.js";
 import { Diamond } from"./modeles/Diamond.js";
 import { Rock } from"./modeles/rocher.js";
 import { Dirt } from"./modeles/Dirt.js";
